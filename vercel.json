@@ -1,11 +1,11 @@
 {
     "routes": [
       {
-        "src": "/api/short(.*)",
+        "src": "/dist/short(.*)",
         "dest": "/dist/index.js"
       },
       {
-        "src": "/api/user(.*)",
+        "src": "/dist/user(.*)",
         "dest": "/dist/index.js"
       }
     ]
