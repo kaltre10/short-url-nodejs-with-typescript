@@ -1,12 +1,8 @@
 {
     "routes": [
-      {
-        "src": "/dist/short(.*)",
-        "dest": "/dist/index.js"
-      },
-      {
-        "src": "/dist/user(.*)",
-        "dest": "/dist/index.js"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "/dist/index.js"
+        }
     ]
   }
