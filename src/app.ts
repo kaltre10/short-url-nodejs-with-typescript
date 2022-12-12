@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -10,8 +10,9 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
-app.use('/', router);
 db();
+app.get('/', (req:Request, res:Response) => res.send('Hola Mundo!!!'));
+app.use('/', router);
 
 
 export = app;
