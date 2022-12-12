@@ -35,8 +35,8 @@ const insertShort = async (req:Request, res:Response) => {
 
 const updateShort = async (req:Request, res:Response) => {
     try {
-        const { user, url, urlShort } = req.body;
-        const short = await store.updateShort(user, url, urlShort);
+        const { id, url, urlShort } = req.body;
+        const short = await store.updateShort(id, url, urlShort);
         response.success(req, res, <object>short, 200);
     } catch (error) {
         response.error(req, res, <object>error, 400);

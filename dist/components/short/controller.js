@@ -48,8 +48,8 @@ const insertShort = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
 });
 const updateShort = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { user, url, urlShort } = req.body;
-        const short = yield store_1.default.updateShort(user, url, urlShort);
+        const { id, url, urlShort } = req.body;
+        const short = yield store_1.default.updateShort(id, url, urlShort);
         response_1.default.success(req, res, short, 200);
     }
     catch (error) {

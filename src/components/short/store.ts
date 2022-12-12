@@ -16,8 +16,8 @@ const insertShort = (user:string, url:string, urlShort:string) => {
     return insertShort;
 }
 
-const updateShort = (user:string, url:string, urlShort:string) => {
-    const short = model.findOneAndUpdate({user}, {url, urlShort}, { new: true});
+const updateShort = (id:string, url:string, urlShort:string) => {
+    const short = model.findOneAndUpdate({ _id: id }, {url, urlShort}, { new: true});
     return short;
 }
 

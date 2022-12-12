@@ -26,8 +26,8 @@ const insertShort = (user, url, urlShort) => {
     const insertShort = model_1.default.create({ user, url, urlShort });
     return insertShort;
 };
-const updateShort = (user, url, urlShort) => {
-    const short = model_1.default.findOneAndUpdate({ user }, { url, urlShort }, { new: true });
+const updateShort = (id, url, urlShort) => {
+    const short = model_1.default.findOneAndUpdate({ _id: id }, { url, urlShort }, { new: true });
     return short;
 };
 const deleteShort = (id) => {
