@@ -54,7 +54,7 @@ const deleteShort = async (req:Request, res:Response) => {
     }
 }
 
-export = {
+export default {
     getAll,
     insertShort,
     updateShort,

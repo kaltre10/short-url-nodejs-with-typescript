@@ -22,7 +22,7 @@ const login = async (req:Request, res:Response) => {
     }
 }
 
-export = {
+export default {
     register,
     login
 }

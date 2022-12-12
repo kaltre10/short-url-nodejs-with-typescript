@@ -35,7 +35,7 @@ const click = async (id:string) => {
 }
 
 
-export = {
+export default {
     getShorts,
     insertShort,
     updateShort,

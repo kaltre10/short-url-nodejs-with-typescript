@@ -22,4 +22,4 @@ const urlShorts = new Schema({
     },   
 }, { timestamps: true });
 
-export = model('UrlShorts', urlShorts);
+export default model('UrlShorts', urlShorts);

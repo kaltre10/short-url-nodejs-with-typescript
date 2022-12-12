@@ -10,7 +10,7 @@ const getUser = async (email:string) => {
     return user;
 }
 
-export = {
+export default {
     register,
     getUser
 }

@@ -14,5 +14,4 @@ db();
 app.get('/', (req:Request, res:Response) => res.send('Hola Mundo!!!'));
 app.use('/', router);
 
-
-export = app;
+export default app;
