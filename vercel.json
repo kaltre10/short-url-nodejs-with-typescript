@@ -1,0 +1,12 @@
+{
+    "routes": [
+      {
+        "src": "/api/short(.*)",
+        "dest": "/dist/index.js"
+      },
+      {
+        "src": "/api/user(.*)",
+        "dest": "/dist/index.js"
+      }
+    ]
+  }
