@@ -29,19 +29,19 @@ Carácteristicas:
 #### USERS
 | Route | Method | Required Data | Optional Data | Description |
 |--|--|--|--|--|
-| /api/user/login | POST | **queryString**: email, password | none | |
-| /api/user/register | POST | **queryString**: email, password | none | |
+| /api/user/login | POST | **body**: email, password | none | |
+| /api/user/register | POST | **body**: email, password | none | |
 
 
 
 #### Shorts
 | Route | Method | Required Data | Optional Data | Description |
 |--|--|--|--|--|
-| /api/short/:/user | GET | none | none | get all short urls of user |
-| /api/short/click/:id | POST | none | none | increase the clicks of the short url |
+| /api/short/:/user | GET | **params**: user | none | get all short urls of user |
+| /api/short/click/:id | GET | **params**: id | none | increase the clicks of the short url |
 | /api/short | POST | **body**: url, urlShort, user | none | create new short url |
 | /api/short | PUT | **body**: id, url, urlShort | none | update short url |
-| /api/short/:id | DELETE | none | none | remove short url |
+| /api/short/:id | DELETE | **params**: id | none | remove short url |
 
 # Run local
 
