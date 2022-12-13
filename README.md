@@ -18,7 +18,7 @@ Carácteristicas:
 | / | GET | false |
 | /login | POST | true |
 | /register | POST | false |
-| /short:user | GET | true |
+| /short/:user | GET | true |
 | /short/click/:id | GET | true |
 | /short | POST | true |
 | /short | PUT | true |
