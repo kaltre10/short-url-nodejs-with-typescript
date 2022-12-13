@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const response_1 = __importDefault(require("../../network/response"));
 const store_1 = __importDefault(require("./store"));
-const nanoid_1 = require("nanoid");
+const uuidv4_1 = require("uuidv4");
 const click = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
@@ -40,7 +40,7 @@ const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 const insertShort = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { user, url } = req.body;
-        const urlShort = shortGenerate(url);
+        const urlShort = (0, uuidv4_1.uuid)().slice(0, 7);
         const short = yield store_1.default.insertShort(user, url, urlShort);
         response_1.default.success(req, res, short, 200);
     }
@@ -70,7 +70,7 @@ const deleteShort = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         response_1.default.error(req, res, error, 400);
     }
 });
-const shortGenerate = (url) => (0, nanoid_1.nanoid)(7);
+// const shortGenerate = (url:string) => nanoid();
 exports.default = {
     getAll,
     insertShort,
