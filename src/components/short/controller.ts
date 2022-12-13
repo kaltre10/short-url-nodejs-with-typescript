@@ -2,16 +2,7 @@ import { Request, Response } from 'express';
 import response from '../../network/response';
 import store from './store';
 import { uuid } from 'uuidv4';
-
-const click = async (req:Request, res:Response) => {
-    try {
-        const { id } = req.params;
-        const short = await store.click(id);
-        response.success(req, res, <object>short, 200);
-    } catch (error) {
-        response.error(req, res, <object>error, 400);
-    }
-}
+import checkUrl from '../../libs/chekUrl';
 
 const getAll = async (req:Request, res:Response) => {
     try {
@@ -27,6 +18,7 @@ const getAll = async (req:Request, res:Response) => {
 const insertShort = async (req:Request, res:Response) => {
     try {
         const { user, url } = req.body;
+        if(!checkUrl(url)) throw 'URL no valid!!!';
         const urlShort = uuid().slice(0, 7);
         const short = await store.insertShort(user, url, urlShort);
         response.success(req, res, short, 200);
@@ -56,12 +48,9 @@ const deleteShort = async (req:Request, res:Response) => {
     }
 }
 
-// const shortGenerate = (url:string) => nanoid();
-
 export default {
     getAll,
     insertShort,
     updateShort,
-    deleteShort,
-    click
+    deleteShort
 }

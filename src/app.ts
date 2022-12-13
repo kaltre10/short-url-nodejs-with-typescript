@@ -15,7 +15,7 @@ db();
 app.get('/', (req:Request, res:Response) => res.send('Hola Mundo!!!'));
 app.get('/:url', async (req:Request, res:Response) => {
     const url = await controller.find(req.params.url);
-    const path = `https://${url?.url}` || 'https://google.com';
+    const path = url?.url || 'https://google.com';
     res.redirect(path);
 });
 app.use('/', router);

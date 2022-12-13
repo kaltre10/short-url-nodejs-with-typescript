@@ -14,9 +14,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const model_1 = __importDefault(require("../short/model"));
 const find = (url) => __awaiter(void 0, void 0, void 0, function* () {
-    const urlOrigin = model_1.default.findOne({ urlShort: url });
+    const urlOrigin = yield model_1.default.findOne({ urlShort: url });
+    click(urlOrigin === null || urlOrigin === void 0 ? void 0 : urlOrigin.id, urlOrigin === null || urlOrigin === void 0 ? void 0 : urlOrigin.click);
     return urlOrigin;
 });
+const click = (id, click = 0) => __awaiter(void 0, void 0, void 0, function* () {
+    click++;
+    const shortUpdate = model_1.default.findOneAndUpdate({ _id: id }, { click }, { new: true });
+    return shortUpdate;
+});
 exports.default = {
-    find
+    find,
+    click
 };

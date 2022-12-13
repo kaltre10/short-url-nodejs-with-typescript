@@ -28,7 +28,7 @@ app.use(express_1.default.json());
 app.get('/', (req, res) => res.send('Hola Mundo!!!'));
 app.get('/:url', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const url = yield controller_1.default.find(req.params.url);
-    const path = `https://${url === null || url === void 0 ? void 0 : url.url}` || 'https://google.com';
+    const path = (url === null || url === void 0 ? void 0 : url.url) || 'https://google.com';
     res.redirect(path);
 }));
 app.use('/', router_1.default);

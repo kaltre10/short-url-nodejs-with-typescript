@@ -26,19 +26,10 @@ const deleteShort = (id:string) => {
     return short;
 }
 
-const click = async (id:string) => {
-    const short = await getShort(id);
-    let click = short?.click || 0;
-    click++;
-    const shortUpdate = model.findOneAndUpdate({_id: id}, { click }, { new: true});
-    return shortUpdate;
-}
-
 
 export default {
     getShorts,
     insertShort,
     updateShort,
     deleteShort,
-    click
 }
