@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import response from '../../network/response';
 import store from './store';
+import { uuid } from 'uuidv4';
 
 const click = async (req:Request, res:Response) => {
     try {
@@ -25,7 +26,8 @@ const getAll = async (req:Request, res:Response) => {
 
 const insertShort = async (req:Request, res:Response) => {
     try {
-        const { user, url, urlShort } = req.body;
+        const { user, url } = req.body;
+        const urlShort = uuid().slice(0, 7);
         const short = await store.insertShort(user, url, urlShort);
         response.success(req, res, short, 200);
     } catch (error) {
@@ -53,6 +55,8 @@ const deleteShort = async (req:Request, res:Response) => {
         response.error(req, res, <object>error, 400);
     }
 }
+
+// const shortGenerate = (url:string) => nanoid();
 
 export default {
     getAll,

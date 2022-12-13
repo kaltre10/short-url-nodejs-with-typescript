@@ -9,7 +9,6 @@ const users = new mongoose_1.Schema({
     },
     password: {
         type: String,
-        required: true
     },
 }, { timestamps: true });
 exports.default = (0, mongoose_1.model)('Users', users);
