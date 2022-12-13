@@ -37,7 +37,7 @@ Carácteristicas:
 #### Shorts
 | Route | Method | Required Data | Optional Data | Description |
 |--|--|--|--|--|
-| /api/short/:/user | GET | **params**: user | none | get all short urls of user |
+| /api/short/:user | GET | **params**: user | none | get all short urls of user |
 | /api/short/click/:id | GET | **params**: id | none | increase the clicks of the short url |
 | /api/short | POST | **body**: url, urlShort, user | none | create new short url |
 | /api/short | PUT | **body**: id, url, urlShort | none | update short url |
